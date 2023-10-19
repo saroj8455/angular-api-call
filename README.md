@@ -25,3 +25,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## API End Point Integreation with Error handel scnrio
+
+
+## Import HttpClientModule in app.module.ts
+`import { HttpClientModule } from '@angular/common/http'` <br>

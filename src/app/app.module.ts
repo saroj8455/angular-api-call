@@ -13,6 +13,7 @@ import { CardCompComponent } from './components/card-comp/card-comp.component';
 import { HeadingComponent } from './components/heading/heading.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     PrimeModule
   ],
   providers: [],
