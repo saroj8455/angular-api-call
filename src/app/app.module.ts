@@ -13,7 +13,8 @@ import { CardCompComponent } from './components/card-comp/card-comp.component';
 import { HeadingComponent } from './components/heading/heading.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ErrorInteService } from './config/error-inte.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     PrimeModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:ErrorInteService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

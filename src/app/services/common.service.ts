@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class CommonService {
 
-  constructor() { }
+  BASE_URL = "https://jsonplaceholder.typicode.com/usersqw";
+  constructor(private http:HttpClient) { }
+
+
+  getUsersfromJsonSrv() {
+    return this.http.get<any>(this.BASE_URL);
+  }
+
+
 }
