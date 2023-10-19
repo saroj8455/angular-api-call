@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICustomizeUser } from 'src/app/common/common';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
@@ -14,6 +15,11 @@ constructor(private common:CommonService) {
 
 ngOnInit(): void {
     this.common.getUsersfromJsonSrv().subscribe(resp=>{
+      console.log(resp);
+    })
+
+    // log customize resp
+    this.common.getCustomizeUser().subscribe((resp:ICustomizeUser[])=>{
       console.log(resp);
     })
 }
