@@ -6,6 +6,7 @@ import { CardModule } from 'primeng/card';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { ChipModule } from 'primeng/chip';
+import { DialogModule } from 'primeng/dialog';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
@@ -15,7 +16,8 @@ import { ChipModule } from 'primeng/chip';
     CardModule,
     ToggleButtonModule,
     InputTextModule,
-    ChipModule
+    ChipModule,
+    DialogModule
   ],
 })
 export class PrimeModule {}

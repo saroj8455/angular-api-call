@@ -11,3 +11,11 @@
     </div>
   </p-card>
 </div>
+
+<div *ngIf="selectedPost" class="card flex justify-content-center">
+  <p-dialog [header]="selectedPost.title" [(visible)]="showDialog" [style]="{width: '50vw'}">
+      <p class="m-0">
+        {{selectedPost.body}}
+      </p>
+  </p-dialog>
+</div>

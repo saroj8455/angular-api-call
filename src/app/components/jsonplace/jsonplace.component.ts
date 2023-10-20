@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { switchMap, tap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 
 export interface IPost {
   userId: number;
@@ -18,7 +18,10 @@ export class JsonplaceComponent implements OnInit {
   private JSON_URI = 'https://jsonplaceholder.typicode.com/posts';
 
   posts: IPost[] = [];
-  buttonText = true;
+
+  showDialog=false;
+  // selectedPost$!:Observable<IPost>
+  selectedPost!:any;
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +36,10 @@ export class JsonplaceComponent implements OnInit {
       switchMap((posts) => this.getPost(id)),
       tap((value) => console.log(value))
     );
-    po$.subscribe()
+    po$.subscribe((resp)=>{
+      this.selectedPost = resp
+    })
+    this.showDialog = true;
   }
 
   getPost(id: number) {
