@@ -20,8 +20,9 @@ export class JsonplaceComponent implements OnInit {
   posts: IPost[] = [];
 
   showDialog=false;
-  // selectedPost$!:Observable<IPost>
-  selectedPost!:any;
+  selectedPost$!:Observable<IPost>
+  loading=false;
+  // selectedPost!:any;
 
   constructor(private http: HttpClient) {}
 
@@ -32,17 +33,28 @@ export class JsonplaceComponent implements OnInit {
   }
 
   singlePost(id: number) {
-    const po$ = this.http.get<IPost[]>(this.JSON_URI).pipe(
-      switchMap((posts) => this.getPost(id)),
-      tap((value) => console.log(value))
-    );
-    po$.subscribe((resp)=>{
-      this.selectedPost = resp
-    })
-    this.showDialog = true;
+    this.loading = true;
+    setTimeout(()=>{
+      this.selectedPost$ = this.http.get<IPost>(`${this.JSON_URI}/${id}`).pipe(
+        switchMap((post) => this.getPost(id)),
+        tap((value) => console.log(value))
+      );
+      this.loading = false;
+      this.showDialog = true;
+    },1000)
+
+
+    // Approach 1
+    // const po$ = this.http.get<IPost>(`${this.JSON_URI}/${id}`).pipe(
+    //   switchMap((post) => this.getPost(id)),
+    //   tap((value) => console.log(value))
+    // );
+    // po$.subscribe((resp)=>{
+    //   this.selectedPost = resp
+    // })
   }
 
   getPost(id: number) {
-    return this.http.get(`${this.JSON_URI}/${id}`);
+    return this.http.get<IPost>(`${this.JSON_URI}/${id}`);
   }
 }

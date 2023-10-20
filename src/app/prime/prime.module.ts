@@ -7,6 +7,7 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { ChipModule } from 'primeng/chip';
 import { DialogModule } from 'primeng/dialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
@@ -17,7 +18,8 @@ import { DialogModule } from 'primeng/dialog';
     ToggleButtonModule,
     InputTextModule,
     ChipModule,
-    DialogModule
+    DialogModule,
+    ProgressSpinnerModule
   ],
 })
 export class PrimeModule {}
