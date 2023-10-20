@@ -4,6 +4,8 @@ import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
 import { ToggleButtonModule } from 'primeng/togglebutton';
+import { InputTextModule } from 'primeng/inputtext';
+import { ChipModule } from 'primeng/chip';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
@@ -11,7 +13,9 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
     ButtonModule,
     MenubarModule,
     CardModule,
-    ToggleButtonModule
+    ToggleButtonModule,
+    InputTextModule,
+    ChipModule
   ],
 })
 export class PrimeModule {}

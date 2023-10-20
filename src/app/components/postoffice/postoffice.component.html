@@ -1,0 +1,51 @@
+<div class="card py-4">
+  <h1 class="text-primary">Search Postoffice Pincode</h1>
+  <div class="card">
+    <span class="p-float-label p-input-icon-left flex">
+      <i class="pi pi-search"></i>
+      <!-- <input
+        pInputText
+        id="title"
+        class="w-full"
+        [(ngModel)]="city"
+        (input)="searchOnChange()"
+      /> -->
+      <input
+      pInputText
+      id="title"
+      class="w-full"
+      [(ngModel)]="city"
+      (ngModelChange)="onChangeInput($event)"
+    />
+      <label htmlFor="title">Search by city</label>
+    </span>
+    <div class="field py-2">
+      <p-button
+        label="Check Pincode"
+        (click)="searchPostOffice()"
+        icon="pi pi-check"
+      ></p-button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="card py-2 flex justify-content-center"
+  *ngFor="let office of balangirPostOffice"
+>
+  <p-card [header]="office.Name" [style]="{ maxWidth: '30rem' }">
+    <div class="card flex align-items-center gap-2 flex-wrap">
+      <p-chip [label]="office.BranchType"></p-chip>
+      <p-chip [label]="office.DeliveryStatus"></p-chip>
+      <p-chip [label]="office.Circle"></p-chip>
+      <p-chip [label]="office.Country"></p-chip>
+      <p-chip [label]="office.Pincode"></p-chip>
+    </div>
+  </p-card>
+</div>
+
+<div
+  class="card py-2 flex justify-content-center"
+>
+
+</div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInteService } from './config/error-inte.service';
+import { PostofficeComponent } from './components/postoffice/postoffice.component';
+import { JsonplaceComponent } from './components/jsonplace/jsonplace.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ErrorInteService } from './config/error-inte.service';
     ErrorComponent,
     CardCompComponent,
     HeadingComponent,
-    NavbarComponent
+    NavbarComponent,
+    PostofficeComponent,
+    JsonplaceComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { ErrorInteService } from './config/error-inte.service';
     PrimeModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:ErrorInteService,multi:true}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

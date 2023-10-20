@@ -1,0 +1,13 @@
+<div class="card py-2 flex justify-content-center" *ngFor="let post of posts">
+  <p-card [header]="post.title" [style]="{ maxWidth: '30rem' }">
+    <div class="card">
+      <p class="m-0">
+        {{ post.body }}
+      </p>
+
+      <div class="card py-2 flex justify-content-end">
+        <button pButton (click)="singlePost(post.id)" pRipple label="Read More" severity="success" class="p-button-text"></button>
+      </div>
+    </div>
+  </p-card>
+</div>

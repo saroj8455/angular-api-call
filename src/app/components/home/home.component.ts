@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   customTodos$ = this.common.getTodosTitle();
 
   customTodos1:ITodo[]=[];
+  todoTitle="";
 
   constructor(private common: CommonService) {}
 
@@ -39,10 +40,21 @@ export class HomeComponent implements OnInit {
     this.common.getTodosTitle().subscribe((resp)=>{
       this.customTodos1 = resp;
     })
-
-
-
   }
+
+
+  searchTodos() {
+    if (!this.todoTitle) {
+      alert("Please enter title of todos.")
+      return;
+    }
+
+    const filterList = this.todos.filter((t)=>{
+      return t.title.toLowerCase().includes(this.todoTitle.toLowerCase());
+    })
+    this.todos = filterList;
+  }
+
   private handelError(error:HttpErrorResponse){
     let errorMessage = `An error occured: ${error.message}`;
     console.log(error);
