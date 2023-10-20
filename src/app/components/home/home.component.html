@@ -2,3 +2,27 @@
   <h1>Welcome to PrimeNg Template</h1>
   <p-button label="Check" icon="pi pi-check"></p-button>
 </div>
+
+
+<div class="card py-4">
+  <h1 class="text-primary">Total Todos Item : {{(customTodos$|async)?.length}}</h1>
+</div>
+
+<div class="card py-4 flex justify-content-center" *ngFor="let todo of customTodos1">
+  <p-card [header]="todo.title">
+    <p class="m-0">
+      hi
+    </p>
+  </p-card>
+</div>
+
+
+<div class="card py-4 flex justify-content-center" *ngFor="let todo of todos">
+  <p-card [header]="todo.title">
+      <p class="m-0">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+          quas!
+      </p>
+  </p-card>
+</div>
+

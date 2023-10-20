@@ -34,3 +34,14 @@ export interface ICustomizeUser {
   email: string;
   website: string;
 }
+export interface ITodos {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+export interface ITodo {
+  title: string;
+  isComplete: boolean;
+}
