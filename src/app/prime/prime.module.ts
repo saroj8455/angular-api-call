@@ -8,6 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ChipModule } from 'primeng/chip';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { DividerModule } from 'primeng/divider';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
@@ -19,7 +20,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     InputTextModule,
     ChipModule,
     DialogModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    DividerModule
   ],
 })
 export class PrimeModule {}

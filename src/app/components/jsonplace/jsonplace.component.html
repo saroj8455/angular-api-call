@@ -1,22 +1,78 @@
+<div class="card py-3">
+  <span class="flex p-float-label p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input
+      pInputText
+      class="w-full"
+      (ngModelChange)="onChangePostId(postId)"
+      id="postId"
+      [(ngModel)]="postId"
+    />
+    <label htmlFor="postId">Enter post id</label>
+  </span>
+</div>
+
+<div class="card flex justify-content-center">
+  <h3 class="text-primary">Post Count : {{ postId }}</h3>
+</div>
+
+<div *ngIf="(searchPost$ | async) as searchPost "  class="card py-2 flex justify-content-center">
+  <p-card [header]="searchPost.title" [style]="{ maxWidth: '30rem' }">
+    <div class="card">
+      <div class="card flex align-items-center gap-2 flex-wrap">
+        <p-chip [label]="searchPost.id.toString()"></p-chip>
+        <p-chip [label]="searchPost.userId.toString()"></p-chip>
+      </div>
+      <p class="m-0">
+        {{ searchPost.body }}
+      </p>
+      <div class="card py-2 flex justify-content-end">
+        <button
+          pButton
+          pRipple
+          label="Read More"
+          severity="success"
+          class="p-button-text"
+        ></button>
+      </div>
+    </div>
+  </p-card>
+</div>
+<p-divider></p-divider>
+<!-- Filter POst -->
+
 <div class="card py-2 flex justify-content-center" *ngFor="let post of posts">
   <p-card [header]="post.title" [style]="{ maxWidth: '30rem' }">
     <div class="card">
       <p class="m-0">
         {{ post.body }}
       </p>
-
       <div class="card py-2 flex justify-content-end">
-        <button pButton (click)="singlePost(post.id)" pRipple label="Read More" severity="success" class="p-button-text"></button>
+        <button
+          pButton
+          (click)="singlePost(post.id)"
+          pRipple
+          label="Read More"
+          severity="success"
+          class="p-button-text"
+        ></button>
       </div>
     </div>
   </p-card>
 </div>
 
-<div *ngIf="(selectedPost$ | async) as selectedPost" class="card flex justify-content-center">
-  <p-dialog [header]="selectedPost.title" [(visible)]="showDialog" [style]="{width: '50vw'}">
-      <p class="m-0">
-        {{selectedPost.body}}
-      </p>
+<div
+  *ngIf="selectedPost$ | async as selectedPost"
+  class="card flex justify-content-center"
+>
+  <p-dialog
+    [header]="selectedPost.title"
+    [(visible)]="showDialog"
+    [style]="{ width: '50vw' }"
+  >
+    <p class="m-0">
+      {{ selectedPost.body }}
+    </p>
   </p-dialog>
 </div>
 <div class="card progress-spinner" *ngIf="loading">

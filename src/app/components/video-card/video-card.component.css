@@ -1,0 +1,12 @@
+.video-player {
+  width: 100%;
+}
+
+.video-player iframe {
+  border: none;
+  width: 100%;
+  min-height: 30vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}

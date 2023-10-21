@@ -1,0 +1,31 @@
+<div class="card py-2 flex justify-content-center">
+  <p-card header="Video title" [style]="{ minWidth: '50rem' }">
+    <div class="card">
+      <div class="card flex align-items-center gap-2 flex-wrap">
+        <p-chip label="Education"></p-chip>
+        <p-chip label="Travel"></p-chip>
+      </div>
+      <p class="m-0 py-4">
+        Don't miss out on this fantastic opportunity to rent a lovely family home in a sought-after neighborhood. Schedule a viewing today to make this house your new home!
+        <!-- https://drive.google.com/file/d/1EvPwkz7iNumT2W2UZAvHlTtkr7rc3Xme/view?usp=sharing -->
+      </p>
+      <div class="video-player card py-2">
+        <iframe
+          src="https://drive.google.com/file/d/1EvPwkz7iNumT2W2UZAvHlTtkr7rc3Xme/preview"
+          allow="autoplay"
+          allowfullscreen
+          webkitallowfullscreen
+        ></iframe>
+      </div>
+      <div class="card py-2 flex justify-content-end">
+        <button
+          pButton
+          pRipple
+          label="Read More"
+          severity="success"
+          class="p-button-text"
+        ></button>
+      </div>
+    </div>
+  </p-card>
+</div>

@@ -39,6 +39,11 @@ export class NavbarComponent implements OnInit{
           icon: 'pi pi-fw pi-calendar',
       },
       {
+        label: 'Videos',
+        icon: 'pi pi-fw pi-video',
+        routerLink:"/video"
+    },
+      {
           label: 'Quit',
           icon: 'pi pi-fw pi-power-off'
       }

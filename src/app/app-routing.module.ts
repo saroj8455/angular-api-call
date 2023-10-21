@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ErrorComponent } from './components/error/error.component';
 import { PostofficeComponent } from './components/postoffice/postoffice.component';
 import { JsonplaceComponent } from './components/jsonplace/jsonplace.component';
+import { VideoCardComponent } from './components/video-card/video-card.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"home",pathMatch:"full"},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"about",component:AboutComponent},
   {path:"postoffice",component:PostofficeComponent},
   {path:"json-p",component:JsonplaceComponent},
+  {path:"video",component:VideoCardComponent},
   {path:"user",loadChildren:()=>import("./user/user.module").then(u=>u.UserModule)},
   {path:"admin",loadChildren:()=>import("./admin/admin.module").then(a=>a.AdminModule)},
   {path:"**",component:ErrorComponent},

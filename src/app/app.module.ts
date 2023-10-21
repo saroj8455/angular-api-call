@@ -17,6 +17,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInteService } from './config/error-inte.service';
 import { PostofficeComponent } from './components/postoffice/postoffice.component';
 import { JsonplaceComponent } from './components/jsonplace/jsonplace.component';
+import { VideoCardComponent } from './components/video-card/video-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { JsonplaceComponent } from './components/jsonplace/jsonplace.component';
     HeadingComponent,
     NavbarComponent,
     PostofficeComponent,
-    JsonplaceComponent
+    JsonplaceComponent,
+    VideoCardComponent
   ],
   imports: [
     BrowserModule,
