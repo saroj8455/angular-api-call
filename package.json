@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "mobile": "ng serve --host 0.0.0.0",
-    "app": "ng build && npx cap add android && npx cap sync && npx cap open android"
+    "app": "ng build && npx cap add android && npx cap sync && npx cap open android",
+    "build-app": "ng build && npx cap sync && npx cap open android"
   },
   "private": true,
   "dependencies": {
