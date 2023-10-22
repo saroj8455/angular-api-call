@@ -9,6 +9,8 @@ import { ChipModule } from 'primeng/chip';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DividerModule } from 'primeng/divider';
+import { BadgeModule } from 'primeng/badge';
+import { KnobModule } from 'primeng/knob';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
@@ -21,7 +23,9 @@ import { DividerModule } from 'primeng/divider';
     ChipModule,
     DialogModule,
     ProgressSpinnerModule,
-    DividerModule
+    DividerModule,
+    BadgeModule,
+    KnobModule
   ],
 })
 export class PrimeModule {}
